@@ -1,0 +1,181 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // forEach
+
+// Array.prototype.forEach2 = function(cb) {
+//   for(let i in this) {
+//     cb(this[i],i,this)
+//   }
+// }
+
+// const arr = [1,2,3,4,5]
+
+// arr.forEach2((item) => console.log(item))
+
+// map
+
+// Array.prototype.map2 = function(cb) {
+//   let output = []
+//   for(let i in this) {
+//     if (this.hasOwnProperty(i)) {
+//       const result = cb(this[i],i,this)
+//       console.log(result)
+//       if (result) {
+//         output.push(result)
+//       }
+//     }
+//   }
+//   return output;
+// }
+
+// const arr = [1,2,3,4,5]
+
+// const test = arr.map2((item) => item + 'haha')
+
+// console.log(test)
+
+// filter2
+
+// Array.prototype.filter2 = function(cb) {
+//   let output = []
+//   for (let i in this) {
+//     if (this.hasOwnProperty(i)) {
+//        const result = cb(this[i],i,this)
+//       if (result) {
+//         output.push(this[i])
+//       }
+//     }
+//   }
+//   return output;
+// }
+
+// const arr = [1,2,3,4,5]
+// const getItem = arr.filter2((item) => item > 2)
+
+// console.log(getItem)
+
+// some2
+
+// Array.prototype.some2 = function (cb) {
+//   let output = false
+//   for (let i in this) {
+//     if (this.hasOwnProperty(i)) {
+//       const result = cb(this[i],i,this)
+//       if (result) {
+//         output = true
+//         return output
+//       }
+//     }
+//   }
+//   return output
+// }
+
+// const courses = [
+//   {
+//     name:'PHP',
+//     price: 200,
+//     active:false
+//   },
+//     {
+//     name:'java',
+//     price: 300,
+//       active:false
+//   },
+//     {
+//     name:'js',
+//     price: 400,
+//       active:false
+//   }
+// ]
+
+// const someH = courses.some2((item) => item.active)
+
+// console.log(someH)
+
+// every2
+
+// Array.prototype.every2 = function(cb) {
+//   let output = true;
+//   for (let i in this) {
+//     if (this.hasOwnProperty(i)) {
+//       const result = cb(this[i],i,this)
+//       if (!result) {
+//         output = false;
+//         break
+//       }
+//     }
+//   }
+//   return output
+// }
+
+// const courses = [
+//   {
+//     name:'PHP',
+//     price: 200,
+//     active:true
+//   },
+//     {
+//     name:'java',
+//     price: 300,
+//       active:true
+//   },
+//     {
+//     name:'js',
+//     price: 400,
+//       active:true
+//   }
+// ]
+
+// const everyH = courses.every2((item) => item.active)
+
+// console.log(everyH)
+
+
+//find2
+
+Array.prototype.find2 = function(cb) {
+  let output;
+  for (let i in this) {
+    if (this.hasOwnProperty(i)) {
+      const result = cb(this[i], i, this)
+      if (result) {
+        output = this[i]
+        break
+      }
+    }
+  }
+  return output;
+}
+
+
+const courses = [
+  {
+    name: 'PHP',
+    price: 200,
+    active: true
+  },
+  {
+    name: 'java',
+    price: 300,
+    active: true
+  },
+  {
+    name: 'js',
+    price: 400,
+    active: true
+  }
+]
+
+const findH = courses.find2((item) => item.price > 200)
+
+console.log(findH)
+    </script>
+</body>
+</html>
